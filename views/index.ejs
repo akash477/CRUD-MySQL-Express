@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Display</title>
+<link rel="stylesheet" href="bootstrap.min.css">
+</head>
+<body>
+<h4><a href="/add-employee">Add Employee</a></h4>
+
+<div class="container">
+  <h2>Employees</h2>        
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone Number</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for(i=0; i<data.length; i++) { %>
+        <tr>
+            <th><%= data[i].name %></th>
+            <th><%= data[i].email %></th>
+            <th><%= data[i].phone %></th>
+            <th><a href="/update-employee/<%= data[i].idemployees %>">Update</a></th>
+            <th><a href="/delete-employee/<%= data[i].idemployees %>">Delete</a></th>
+        </tr>
+      <% } %>
+    </tbody>
+  </table>
+</div>
+
+</body>
+</html>
